@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Master</title>
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div>
+            <h2 class="text-4xl text-center py-6 font-bold text-cyan-500">Money Master</h2>
+        </div>
+        <div class="flex justify-center items-center w-full">
+            <div>
+                <img class="w-2/3 rounded-md" src="./money.webp" alt="Money picture">
+            </div>
+            <div>
+                <div class="pb-4">
+                    <h4 class="text-2xl font-semibold pb-4 text-center">Income</h4>
+                    <span class="text-lg font-weight pr-2">Income:</span> <input
+                    id="netIncome"
+                    type="text"
+                    placeholder="Net Income"
+                    class="p-2 border-2 border-black-700 rounded-md text-black focus:outline-none focus:border-sky-500"
+                    />
+                </div>
+                <div class="pb-4">
+                    <h4 class="text-2xl font-semibold pb-4 text-center">Expences</h4>
+                    <span class="text-lg font-weight pr-2">Food:</span> <input
+                    id="food"
+                    type="text"
+                    placeholder="Food expences"
+                    class="p-2 border-2 border-black-700 rounded-md text-black focus:outline-none focus:border-sky-500"
+                    /> <br><br>
+
+                    <span class="text-lg font-weight pr-2">Rent:</span> <input
+                    type="text"
+                    id="rent"
+                    placeholder="Rent expences"
+                    class="p-2 border-2 border-black-700 rounded-md text-black focus:outline-none focus:border-sky-500"
+                    /> <br><br>
+
+                    <span class="text-lg font-weight pr-2">Cloth:</span> <input
+                    type="text"
+                    id="cloth"
+                    placeholder="Cloth expences"
+                    class="p-2 border-2 border-black-700 rounded-md text-black focus:outline-none focus:border-sky-500"
+                    /> <br><br>
+
+                    <div class="text-center">
+                        <button id="calculateExpence" class="bg-sky-500 hover:bg-sky-700 px-12 py-2 text-white">
+                            Calculate
+                        </button>
+                    </div>
+
+                    <p class="text-2xl font-bold pt-6 pb-2">Total Expences: <span id="totalExpence"></span></p>
+                    <p class="text-2xl font-bold pb-6">Balance: <span id="balance"></span></p>
+
+                    <span class="text-lg font-weight pr-2">Save:</span> <input
+                    type="text"
+                    id="save"
+                    placeholder="Save"
+                    class="p-2 border-2 border-black-700 rounded-md text-black focus:outline-none focus:border-sky-500"
+                    /><span class="px-4">%</span><button id="save" class="bg-sky-500 hover:bg-sky-700 px-10 py-2 text-white">
+                        Save
+                    </button>
+
+                    <p class="text-2xl font-bold pt-6 pb-2">Saving Amount: <span id="savingAmount"></span></p>
+                    <p class="text-2xl font-bold pb-6">Remaining Balance: <span id="remainingBalance"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./app.js"></script>
+    
+</body>
+</html>
