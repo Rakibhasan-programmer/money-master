@@ -1,47 +1,72 @@
-document.getElementById('calculateExpence').addEventListener('click', function(){
+function netIncome(id){
     // Net Income
-    let incomeInput = document.getElementById("netIncome");
+    let incomeInput = document.getElementById(id);
     let income = parseFloat(incomeInput.value);
 
-    // Expences
-    let food = document.getElementById("food");
-    let foodValue = parseFloat(food.value);
-    let rent = document.getElementById("rent");
-    let rentValue = parseFloat(rent.value);
-    let cloth = document.getElementById("cloth");
-    let clothValue = parseFloat(cloth.value);
-
-    let totalExpence = foodValue + rentValue + clothValue;
-
-    // total expence
-    let expences = document.getElementById("totalExpence");
-    expences.innerText = totalExpence;
-    // balance
-    let balance = document.getElementById("balance");
-    let mainBalance = income - totalExpence;
-    balance.innerText = mainBalance;
-    
-
     // clear input
-    incomeInput.value = "";
-    food.value = "";
-    rent.value = "";
-    cloth.value = "";
+    // incomeInput.value = "";
+    return income;
+}
+// expences
+function expences(){
+    let income = netIncome("netIncome");
+   // Expences
+   let food = document.getElementById("food");
+   let foodValue = parseFloat(food.value);
+   let rent = document.getElementById("rent");
+   let rentValue = parseFloat(rent.value);
+   let cloth = document.getElementById("cloth");
+   let clothValue = parseFloat(cloth.value);
+
+   // checking validation
+   if(income>=0 && foodValue>=0 && rentValue>=0 && clothValue>=0){
+       let totalExpence = foodValue + rentValue + clothValue;
+       // total expence
+       let expences = document.getElementById("totalExpence");
+       expences.innerText = totalExpence;
+       // balance
+       let balance = document.getElementById("balance");
+       let mainBalance = income - totalExpence;
+       balance.innerText = mainBalance;
+   } else{
+       document.getElementById("error").innerText = "Fields Can't be empty/negative";
+   }
+   // clear input
+   food.value = "";
+   rent.value = "";
+   cloth.value = "";
+
+}
+document.getElementById('calculateExpence').addEventListener('click', function(){
+    expences();
 })
 
-// document.getElementById("save").addEventListener('click', function(){
+document.getElementById("savings").addEventListener("click", function(){
 
-// })
+     // Net Income
+     let incomeInput = document.getElementById("netIncome");
+     let income = parseFloat(incomeInput.value);
 
-// saving amount
-// let saveAmount = document.getElementById("save");
-// let saveAmountValue = parseFloat(saveAmount.value);
+    // mainBalance
+    let balance = document.getElementById("balance");
+    let balanceValueText = balance.innerText;
+    let mainBalance = parseFloat(balanceValueText);
 
-// let savingAmount = (income * saveAmountValue) / 100;
+    // saving amount
+    let saveAmount = document.getElementById("save");
+    let saveAmountValue = parseFloat(saveAmount.value);
 
-// let savings = document.getElementById("savingAmount");
-// savings.innerText = savingAmount;
+    let savingAmount = ((income * saveAmountValue) / 100);
 
-// let remainingBalance = document.getElementById("remainingBalance");
-// let remainingBalanceValue = mainBalance - savingAmount;
-// remainingBalance.innerText = remainingBalanceValue;
+    let savings = document.getElementById("savingAmount");
+    savings.innerText = savingAmount;
+
+    let remainingBalance = document.getElementById("remainingBalance");
+    let remainingBalanceValue = mainBalance - savingAmount;
+    remainingBalance.innerText = remainingBalanceValue;
+
+    // clear input
+    saveAmount.value = "";
+    incomeInput.value = "";
+})
+
