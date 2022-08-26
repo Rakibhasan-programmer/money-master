@@ -44,8 +44,7 @@ document.getElementById('calculateExpence').addEventListener('click', function()
 document.getElementById("savings").addEventListener("click", function(){
 
      // Net Income
-     let incomeInput = document.getElementById("netIncome");
-     let income = parseFloat(incomeInput.value);
+     let income = netIncome("netIncome");
 
     // mainBalance
     let balance = document.getElementById("balance");
@@ -67,6 +66,6 @@ document.getElementById("savings").addEventListener("click", function(){
 
     // clear input
     saveAmount.value = "";
-    incomeInput.value = "";
+    document.getElementById("netIncome").value = "";
 })
 
